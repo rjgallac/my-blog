@@ -1,6 +1,6 @@
 ---
 title: Locale dates in javascript
-date: "2019-11-6T00:00:00.284Z"
+date: "2019-11-06T00:00:00.284Z"
 description: "Locale dates in javascript"
 ---
 
