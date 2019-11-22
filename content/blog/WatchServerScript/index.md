@@ -4,7 +4,7 @@ date: "2019-11-21T00:00:00.284Z"
 description: "Watch Server Script"
 ---
 
-
+A little script to ping/poll a server until it up before launching into the next stage of the pipeline build.
 
 ```
 #!/bin/bash
