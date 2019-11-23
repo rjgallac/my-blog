@@ -1,6 +1,6 @@
 ---
 title: Local gitlab and Runners
-date: "2017-11-23T00:00:00.284Z"
+date: "2019-11-23T00:00:00.284Z"
 description: "local gitlab runners"
 ---
 In an attempt to learn gitlab and how to use runners I thought I would try and setup the environments on my laptop so I could experiment.  
