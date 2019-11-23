@@ -1,10 +1,10 @@
 ---
-title: GitlabRunnerDockerHubPush
+title: Gitlab Runner Docker Hub Push
 date: "2019-11-29T00:00:00.284Z"
-description: "GitlabRunnerDockerHubPush"
+description: "Gitlab Runner Docker Hub Push"
 ---
 
-To push to your docker hub registry.
+To push to your docker hub registry. first change the gitlab-runner password.
 
 ```
 sudo su
