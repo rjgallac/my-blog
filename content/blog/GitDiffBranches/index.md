@@ -1,6 +1,6 @@
 ---
 title: Git diff two branches
-date: "2017-01-26T00:00:00.284Z"
+date: "2019-11-26T00:00:00.284Z"
 description: "Git diff two branches"
 ---
 
