@@ -1,0 +1,28 @@
+---
+title: Spring boot cli
+date: "2019-12-19T00:00:00.284Z"
+description: "spring boot cli"
+---
+
+use sdkman to install springboot cli
+
+
+sdk install springboot
+
+
+spring init --build=gradle --dependencies=web,data-jpa my-project
+
+or a groovy app
+```
+@RestController
+class WebApplication {
+
+    @RequestMapping("/")
+    String home() {
+        "Hello World!"
+    }
+
+}
+```
+
+and run spring run hello.groovy
