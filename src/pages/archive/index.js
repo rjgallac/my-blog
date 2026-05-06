@@ -20,9 +20,7 @@ class ArchiveIndex extends React.Component {
           {periods.map((period) => (
             <div key={period.fieldValue} className="archive-month">
               <h2>
-                <Link to={period.fieldValue}>
-                  {period.fieldValue}
-                </Link>
+                <Link to={period.fieldValue}>{period.fieldValue}</Link>
               </h2>
               <div className="posts-list">
                 {period.edges.map(({ node }) => {
@@ -68,7 +66,7 @@ export const pageQuery = graphql`
             }
             frontmatter {
               title
-              date(formatString: "MMMM YYYY")
+              date(formatString: "MMMM DD, YYYY")
             }
           }
         }
