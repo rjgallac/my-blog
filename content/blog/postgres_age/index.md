@@ -1,7 +1,7 @@
 ---
-title: Test Apache Age
+title: Test Postgres Age
 date: "2026-05-04T00:00:06.284Z"
-description: "Test Apache Age"
+description: "Test Postgres Age"
 ---
 a docker compose file to get you start with apache age in postgres and a viewer
 

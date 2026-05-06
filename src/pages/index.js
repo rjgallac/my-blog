@@ -10,7 +10,20 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const allPosts = data.allMarkdownRemark.edges
+
+    const currentMonth = new Date().toLocaleString("en-US", {
+      month: "long",
+      year: "numeric",
+    })
+    const posts = allPosts.filter(({ node }) => {
+      const postDate = new Date(node.frontmatter.date)
+      const postMonth = postDate.toLocaleString("en-US", {
+        month: "long",
+        year: "numeric",
+      })
+      return postMonth === currentMonth
+    })
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -56,7 +69,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+    ) {
       edges {
         node {
           excerpt
