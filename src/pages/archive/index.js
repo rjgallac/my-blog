@@ -17,26 +17,33 @@ class ArchiveIndex extends React.Component {
         <h1>Blog Archive</h1>
         <PeriodList periods={periods} />
         <div className="archive-posts">
-          {periods.map((period) => (
-            <div key={period.fieldValue} className="archive-month">
-              <h2>
-                <Link to={period.fieldValue}>{period.fieldValue}</Link>
-              </h2>
-              <div className="posts-list">
-                {period.edges.map(({ node }) => {
-                  const title = node.frontmatter.title || node.fields.slug
-                  return (
-                    <article key={node.fields.slug}>
-                      <Link to={node.fields.slug}>
-                        <h3>{title}</h3>
-                      </Link>
-                      <small>{node.frontmatter.date}</small>
-                    </article>
-                  )
-                })}
+          {periods.map((period) => {
+            let formattedDate = period.fieldValue
+            if (Date.parse(period.fieldValue)) {
+              const date = new Date(period.fieldValue)
+              formattedDate = `${date.getMonth() + 1}/${date.getFullYear()}`
+            }
+            return (
+              <div key={period.fieldValue} className="archive-month">
+                <h2>
+                  <Link to={period.fieldValue}>{formattedDate}</Link>
+                </h2>
+                <div className="posts-list">
+                  {period.edges.map(({ node }) => {
+                    const title = node.frontmatter.title || node.fields.slug
+                    return (
+                      <article key={node.fields.slug}>
+                        <Link to={node.fields.slug}>
+                          <h3>{title}</h3>
+                        </Link>
+                        <small>{node.frontmatter.date}</small>
+                      </article>
+                    )
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </Layout>
     )
@@ -65,8 +72,8 @@ export const pageQuery = graphql`
               slug
             }
             frontmatter {
-              title
               date(formatString: "MMMM DD, YYYY")
+              title
             }
           }
         }
