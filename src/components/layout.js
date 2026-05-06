@@ -60,7 +60,32 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header>
+          <nav style={{ marginBottom: rhythm(1) }}>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                color: `inherit`,
+                marginRight: rhythm(1),
+              }}
+              to={`/`}
+            >
+              Home
+            </Link>
+            <Link
+              style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                color: `inherit`,
+              }}
+              to={`/archive`}
+            >
+              Archive
+            </Link>
+          </nav>
+          {header}
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with

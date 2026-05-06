@@ -5,6 +5,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const archivePage = path.resolve(`./src/pages/archive/index.js`)
+
   const result = await graphql(
     `
       {
@@ -47,6 +49,12 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
       },
     })
+  })
+
+  // Create archive page
+  createPage({
+    path: `/archive`,
+    component: archivePage,
   })
 }
 
