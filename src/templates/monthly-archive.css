@@ -1,0 +1,20 @@
+ul.monthly-posts,
+ul.monthly-posts {
+  list-style: none;
+  padding: 0;
+}
+
+ul.monthly-posts li,
+ul.monthly-posts > div > article {
+  margin-bottom: rhythm(0.75);
+}
+
+ul.monthly-posts > div > article header h3,
+ul.monthly-posts > div > article header small,
+ul.monthly-posts > div > article section p {
+  line-height: rhythm(1.25);
+}
+
+ul.monthly-posts > div > article header h3 {
+  margin-bottom: rhythm(0.25);
+}
