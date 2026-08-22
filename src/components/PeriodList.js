@@ -3,8 +3,10 @@ import { Link } from "gatsby"
 
 const PeriodList = ({ periods }) => {
   const formatDate = (dateValue) => {
+    console.log(dateValue)
     if (typeof dateValue === "string" && Date.parse(dateValue)) {
       const date = new Date(dateValue)
+      console.log("HERE")
       return `${date.getMonth() + 1}/${date.getFullYear()}`
     }
     return dateValue
@@ -58,7 +60,7 @@ const PeriodList = ({ periods }) => {
         {periods && periods.length > 0 ? (
           periods.map((period, index) => (
             <li key={index} style={liStyle}>
-              <Link to={period.fieldValue} style={linkStyle}>
+              <Link to={`/archive/${period.fieldValue}`} style={linkStyle}>
                 {formatDate(period.fieldValue)}
               </Link>
               <span className="post-count" style={countStyle}>

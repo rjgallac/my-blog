@@ -46,6 +46,7 @@ class BlogIndex extends React.Component {
               const title = node.frontmatter.title || node.fields.slug
               return (
                 <article key={node.fields.slug}>
+                  ......
                   <header>
                     <h3
                       style={{
@@ -93,10 +94,10 @@ export const pageQuery = graphql`
       }
     }
     archive: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: { frontmatter: { date: ASC } } }
       limit: 1000
     ) {
-      group(field: frontmatter___date) {
+      group(field: { frontmatter: { date: { formatString: "YYYY-MM" } } }) {
         fieldValue
         edges {
           node {
@@ -108,7 +109,7 @@ export const pageQuery = graphql`
       }
     }
     posts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: { frontmatter: { date: ASC } } }
       limit: 1000
     ) {
       edges {
