@@ -2,6 +2,9 @@
 title: Camel and activemq
 date: "2017-01-28T00:00:00.284Z"
 description: "Camel and activemq"
+categories: 
+    - integration
+tags: ["jan-2017"]
 ---
 
 Camel does not seem to want to pick up the broker url when specified in spring boot properties file.

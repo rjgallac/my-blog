@@ -61,7 +61,21 @@ class Layout extends React.Component {
         }}
       >
         <header>{header}</header>
-        <main>{children}</main>
+        <div style={{
+            display:`flex`,
+            flexDirection:`row`
+            }}>
+          <main>{children}</main>
+          <aside>
+            <h3>Archive</h3>
+            <ul>
+              <li><a href="/tags/jan-2017">Jan 2017</a></li>
+              <li><a href="/tags/dec-2017">Dec 2017</a></li>
+            </ul>
+
+          </aside>
+        </div>
+        
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

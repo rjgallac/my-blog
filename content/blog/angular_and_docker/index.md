@@ -2,6 +2,9 @@
 title: angular and docker
 date: "2017-12-08T00:00:00.284Z"
 description: "angular and docker"
+categories: 
+    - docker
+tags: ["dec-2017"]
 ---
 issuing the following three commands sets up angular through a docker container and serves it on http://localhost:4200/
 ```
